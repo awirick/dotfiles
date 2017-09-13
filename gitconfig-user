@@ -1,11 +1,11 @@
 [user]
 	# Name used in commit messages.
-	name = Greg Thompson
+	name = Andrew Wirick
 	# Email used in commit messages.
-	email = thompson.glowe@gmail.com
+	email = awirick@gmail.com
 [shell]
 	# Default SSH username.
-	username = greg
+	username = awirick
 [github]
 	# GitHub username for command-line tools.
-	user = thompsongl
+	user = awirick

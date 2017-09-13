@@ -14,6 +14,14 @@ alias -- -="cd -"
 # Git
 alias g="git"
 alias gs="git status"
+alias gco="git checkout"
+alias gl="git pull"
+alias gpom="git pull origin master"
+alias gp="git push"
+alias gd="git diff | mate"
+alias gb="git branch"
+alias gba="git branch -a"
+alias del="git branch -d"
 
 # Reset previous commit, but keep all the associated changes.
 alias goddammit="git reset --soft HEAD^"
@@ -107,6 +115,28 @@ gz() {
 
     printf "orig: %d bytes\n" "$origsize"
     printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
+}
+
+
+# Simple Git Functions
+# Prune merged local branches
+function gplocal {
+  git branch --merged \
+    | grep -v "\*" \
+    | grep -v master \
+    | xargs -n 1 git branch -d
+
+  git remote prune origin
+}
+
+# Prune all merged branches. Thanks to http://stackoverflow.com/a/6127884/974981
+function gpmerged {
+  git branch --merged \
+    | grep -v "\*" \
+    | grep -v master \
+    | xargs -n 1 git branch -d
+
+  git remote prune origin
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
