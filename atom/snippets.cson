@@ -13,9 +13,156 @@
 #     'prefix': 'log'
 #     'body': 'console.log $1'
 #
-# Each scope (e.g. '.source.coffee' above) can only be declared once.
-#
 # This file uses CoffeeScript Object Notation (CSON).
-# If you are unfamiliar with CSON, you can read more about it in the
-# Atom Flight Manual:
-# https://atom.io/docs/latest/using-atom-basic-customization#cson
+# If you are unfamiliar with CSON, you can read more about it here:
+# https://github.com/bevry/cson#what-is-cson
+
+'.source.html':
+    'translate binding':
+        'prefix': 'ngbindtranslate'
+        'body': 'ng-bind="::$1 | i18n"'
+'.source.scss':
+    'import theme index':
+        'prefix': 'itidx'
+        'body': '@import \'./theme/index.scss\';'
+    'import a theme':
+        'prefix': 'itf'
+        'body': """
+            @import './_$1.scss';
+        """
+    'include content theme styling':
+        'prefix': 'ics'
+        'body': """
+            @include contentThemeStyling() {\n
+        """
+'.source.js':
+    'ES6 Getter':
+        'prefix': 'getter'
+        'body': """
+        get $1() {
+            return $2;
+        }$3
+        """
+    'Api Action for Redux':
+        'prefix': 'APIAction'
+        'body': """
+        export const $1 = {
+            BEGIN: '$1.BEGIN',
+            FAILURE: '$1.FAILURE',
+            SUCCESS: '$1.SUCCESS'
+        };
+
+        const $1_TYPES = [
+            $1.BEGIN,
+            $1.SUCCESS,
+            $1.FAILURE
+        ];
+
+        export const $2 = () => {
+            return (dispatch) => {
+                return ThunkHelper(dispatch, $1_TYPES, {
+                    method: 'post',
+                    url: '$3',
+                    data: {}
+                });
+            };
+        };
+        """
+    'Reducer Redux':
+        'prefix': 'ReduxReducer'
+        'body': """
+        import Immutable from 'seamless-immutable';
+
+        import {
+            $1
+        } from './actions/$2';
+
+        export const INITIAL_STATE = Immutable({
+        });
+
+        export default function $3(state = INITIAL_STATE, {
+            payload = {},
+            type
+        }) {
+            switch (type) {
+                case $1:
+                    return state.merge({
+                        data: payload
+                    });
+                default:
+                    return state;
+            }
+        }
+        """
+    'Invision Routing Config':
+        'prefix': 'RouteConfig'
+        'body': """
+        import { $1 } from '../../security.attributes';
+
+        export function config($stateProvider) {
+          $stateProvider.state('index.$2.$3', {
+              securityAttributes: [$1],
+              template: '$4',
+              url: '/$3'
+          });
+        }
+        """
+    'Invision Smart Controller':
+        'prefix': 'SmartController'
+        'body': """
+        import LocaleKeys from '../../locales/keys';
+
+        export class $1 {
+            constructor($ngRedux) {
+                this.$ngRedux = $ngRedux;
+                this.localeKeys = LocaleKeys;
+            }
+
+            $onInit() {
+                const controllerActions = {
+                };
+
+                const mapStateToTarget = (store) => {
+                    return {
+                    };
+                };
+
+                this.disconnectRedux = this.$ngRedux.connect(mapStateToTarget, controllerActions)((state, actions) => {
+                    this.state = state;
+                    this.actions = actions;
+                });
+            }
+
+            $onDestroy() {
+                this.disconnectRedux();
+            }
+        }
+        """
+    'Invision Module':
+        'prefix': 'InvModule'
+        'body': """
+        import angular from 'angular';
+        import 'angular-ui-router';
+
+        import { config } from './$1.config';
+        import $2 from './$1.component';
+
+        export default angular.module('invision.$3.$1', [
+            'ui.router'
+        ])
+        .config(config)
+        .component('$4', $2)
+        .name;
+        """
+    'Invision Simple Action':
+        'prefix': 'SimpleAction'
+        'body': """
+        export const $1 = '$2_$1';
+
+        export const $3 = ($4) => {
+            return {
+                type: $1,
+                payload: $4
+            };
+        };
+        """

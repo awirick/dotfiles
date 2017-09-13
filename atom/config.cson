@@ -1,48 +1,67 @@
 "*":
   "atom-beautify":
     general:
-      _analyticsUserId: "cd977360-39d5-4e0d-82da-4d581903b602"
+      _analyticsUserId: "afbc218b-de8b-4f92-8322-9adeaf141143"
+  "atom-css-comb":
+    readyMadeConfigs: "csscomb"
+  "atom-pair": {}
+  "autocomplete-plus": {}
+  blame: {}
   core:
-    excludeVcsIgnoredPaths: false
-    ignoredNames: [
-      ".node-version"
-      ".php-version"
+    disabledPackages: [
+      "ever-notedown"
+      "linter-jshint"
+      "vim-mode"
+      "linter-sass-lint"
+      "terminal-plus"
+      "open-on-github"
+      "atom-pair"
     ]
+    telemetryConsent: "limited"
   editor:
-    fontFamily: "Source Code Pro"
-    fontSize: 18
+    autoIndent: false
+    fontSize: 16
     invisibles: {}
+    preferredLineLength: 125
     showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
     tabLength: 4
-    tabType: "soft"
-  emmet: {}
+  "ever-notedown": {}
   "exception-reporting":
-    userId: "9c9e9f1e-bdfa-2932-93c0-07d5c42c550f"
-  jshint:
-    onlyConfig: true
-    supportLintingJsx: true
-  linter:
-    errorPanelHeight: 79
+    userId: "92c3dff9-1544-2937-e4c5-5d22f7ab5ec2"
+  "git-blame":
+    columnWidth: 300
+    dateFormatString: "MM-DD"
+  "git-diff-details":
+    enableSyntaxHighlighting: true
+  "language-elm": {}
+  linter: {}
   "linter-eslint":
-    disableWhenNoEslintrcFileInPath: true
-    fixOnSave: true
-  "linter-scss-lint": {}
+    disableWhenNoEslintConfig: false
+    disableWhenNoEslintrcFileInPath: false
+  "linter-ui-default":
+    panelHeight: 69
   "markdown-preview":
     useGitHubStyle: true
-  pigments:
-    groupPaletteColors: "by file"
-    mergeColorDuplicates: true
-  react: {}
+  "merge-conflicts": {}
+  pigments: {}
+  "platformio-ide-terminal":
+    core:
+      mapTerminalsTo: "Folder"
+    toggles:
+      autoClose: true
+  "terminal-plus":
+    core: {}
+    style:
+      fontSize: "12px"
+      theme: "dracula"
+    toggles:
+      autoClose: true
   "toggle-quotes": {}
-  "tree-view": {}
+  "tree-view":
+    autoReveal: true
+  "vim-mode":
+    startInInsertMode: true
   welcome:
     showOnStartup: false
-".css.scss.source":
-  editor:
-    tabLength: 4
-".css.source":
-  editor:
-    tabLength: 2
-".sass.source":
-  editor:
-    tabLength: 4
