@@ -5,4 +5,4 @@
 [ -z "$LOGIN_BASH" ] && source ~/.bash_profile
 
 # load shared shell configuration
-source ~/.shrc
+# source ~/.shrc
