@@ -4,3 +4,8 @@
 /ssh/known_hosts
 bundle/cache
 rbenv/*/
+atom/.apm
+atom/blob-store
+atom/compile*
+atom/storage
+atom/github.cson
