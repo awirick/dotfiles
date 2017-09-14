@@ -24,12 +24,16 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-# Source Bash Completion
-if [ -f $(HOMEBREW_PREFIX --prefix)/etc/bash_completion ]; then
-  . $(HOMEBREW_PREFIX --prefix)/etc/bash_completion
+# # Source Bash Completion
+# if [ -f $(HOMEBREW_PREFIX --prefix)/etc/bash_completion ]; then
+#   . $(HOMEBREW_PREFIX --prefix)/etc/bash_completion
+# fi
+
+
+if [ hash thefuck 2>/dev/null ]; then
+  eval $(thefuck --alias fuck)
 fi
 
-
-if [ -f thefuck ]; then
-  eval $(thefuck --alias fuck)
+if [ hash nodenv 2>/dev/null ]; then
+  eval "$(nodenv init -)"
 fi

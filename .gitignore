@@ -9,3 +9,5 @@ atom/blob-store
 atom/compile*
 atom/storage
 atom/github.cson
+
+config/thefuck*
