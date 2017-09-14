@@ -45,7 +45,6 @@ brew 'nginx', service_restart: true
 brew 'ruby-build'
 brew 'rbenv'
 brew 'rbenv-default-gems'
-brew 'rbenv-readline'
 brew 'nodenv'
 brew 'libmcrypt'
 brew 'redis', service_restart: true
@@ -56,11 +55,11 @@ brew 'mysql'
 brew 'homebrew/versions/mysql56'
 brew 'homebrew/versions/ruby187'
 brew 'php-build'
-brew 'phpenv'
 brew 'mongodb'
 brew 'thefuck'
 cask 'appcleaner'
 cask 'atom'
+cask 'box-sync'
 cask 'cyberduck'
 cask 'dropbox'
 cask 'firefox'
@@ -72,17 +71,15 @@ cask 'imageoptim'
 cask 'keepingyouawake'
 cask 'opera'
 cask 'sequel-pro'
-cask 'skype'
+cask 'skype-for-business'
 cask 'spotify'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'vlc'
 cask 'xquartz'
-mas 'Remote Desktop', id: 409907375
 mas 'Xcode', id: 497799835
 mas 'Keynote', id: 409183694
 mas 'iMovie', id: 408981434
 mas 'Slack', id: 803453959
 mas 'Pages', id: 409201541
-mas 'Pixelmator', id: 407963104
 mas 'Numbers', id: 409203825
