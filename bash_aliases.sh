@@ -23,9 +23,6 @@ alias gb="git branch"
 alias gba="git branch -a"
 alias del="git branch -d"
 
-# save as i.e.: git-authors and set the executable flag
-alias git-authors = "git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD |grep  "^author "|sort|uniq -c|sort -"
-
 # Reset previous commit, but keep all the associated changes.
 alias goddammit="git reset --soft HEAD^"
 
