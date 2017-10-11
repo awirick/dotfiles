@@ -16,6 +16,7 @@
       "terminal-plus"
       "open-on-github"
       "atom-pair"
+      "language-babel"
     ]
     telemetryConsent: "limited"
   editor:
@@ -31,7 +32,7 @@
   "exception-reporting":
     userId: "92c3dff9-1544-2937-e4c5-5d22f7ab5ec2"
   "git-blame":
-    columnWidth: 300
+    columnWidth: 379
     dateFormatString: "MM-DD"
   "git-diff-details":
     enableSyntaxHighlighting: true

@@ -23,6 +23,9 @@ alias gb="git branch"
 alias gba="git branch -a"
 alias del="git branch -d"
 
+# save as i.e.: git-authors and set the executable flag
+alias git-authors = "git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD |grep  "^author "|sort|uniq -c|sort -"
+
 # Reset previous commit, but keep all the associated changes.
 alias goddammit="git reset --soft HEAD^"
 
@@ -156,3 +159,6 @@ pyserver() {
     # manually with just a few lines of code.
     python -c $'import SimpleHTTPServer;\nSimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map[""] = "text/plain";\nSimpleHTTPServer.test();' "$port"
 }
+
+# Start up Visual Studio Code
+vscode () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}

@@ -7,7 +7,11 @@ rbenv/*/
 atom/.apm
 atom/blob-store
 atom/compile*
-atom/storage
 atom/github.cson
+atom/linter-config.json
+atom/.node-gyp
+atom/packages
+atom/storage
 
 config/thefuck*
+config/configstore
