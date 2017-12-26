@@ -6,3 +6,5 @@
 
 # load shared shell configuration
 # source ~/.shrc
+
+eval $(thefuck --alias)

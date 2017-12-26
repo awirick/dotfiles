@@ -34,6 +34,4 @@ if [ hash thefuck 2>/dev/null ]; then
   eval $(thefuck --alias fuck)
 fi
 
-if [ hash nodenv 2>/dev/null ]; then
-  eval "$(nodenv init -)"
-fi
+eval "$(nodenv init -)"
